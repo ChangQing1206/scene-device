@@ -1,0 +1,12 @@
+..\obj\generator.o: ..\nmea\generator.c
+..\obj\generator.o: ..\MYLIB\inc\nmea/gmath.h
+..\obj\generator.o: ..\MYLIB\inc\nmea/info.h
+..\obj\generator.o: ..\MYLIB\inc\nmea/time.h
+..\obj\generator.o: ..\MYLIB\inc\nmea/config.h
+..\obj\generator.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+..\obj\generator.o: ..\MYLIB\inc\nmea/generate.h
+..\obj\generator.o: ..\MYLIB\inc\nmea/sentence.h
+..\obj\generator.o: ..\MYLIB\inc\nmea/generator.h
+..\obj\generator.o: ..\MYLIB\inc\nmea/context.h
+..\obj\generator.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\generator.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h

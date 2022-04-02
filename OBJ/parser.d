@@ -1,0 +1,12 @@
+..\obj\parser.o: ..\nmea\parser.c
+..\obj\parser.o: ..\MYLIB\inc\nmea/tok.h
+..\obj\parser.o: ..\MYLIB\inc\nmea/config.h
+..\obj\parser.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+..\obj\parser.o: ..\MYLIB\inc\nmea/parse.h
+..\obj\parser.o: ..\MYLIB\inc\nmea/sentence.h
+..\obj\parser.o: ..\MYLIB\inc\nmea/info.h
+..\obj\parser.o: ..\MYLIB\inc\nmea/time.h
+..\obj\parser.o: ..\MYLIB\inc\nmea/parser.h
+..\obj\parser.o: ..\MYLIB\inc\nmea/context.h
+..\obj\parser.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\parser.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
