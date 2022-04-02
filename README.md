@@ -2,24 +2,13 @@
 
 **简介：** ESP8266通过MQTT协议将数据传输至OnenNet云平台
 
-#### 1. 相关连接：
-
-1. github（源码）： https://github.com/Mbwide/DHT11_ToOneNetByMqtt
-2. CSDN：（图文解析）：https://blog.csdn.net/ssssadw/article/details/111584510
-3. Bilibili（视频解析）：https://www.bilibili.com/video/BV1Vi4y1w7U1
-
-#### 2. 具体功能：
-
-1. SHT30采集环境温湿度数据，MQ7采集烟雾数据，光敏传感器采集光照数据，ESP8266模块通过MQTT协议将温湿度数据传输至OnenNet云平台
-2.  OneNET可以通过云平台远程控制LED灯的亮灭
-3.  串口显示相关数据信息
 
 #### 3. 硬件环境：
 
-1. 正点原子STM32F103RCT6（正点原子MiniSTM32）
-2. SHT30温湿度传感器
-3. MQ7烟雾传感器模块
-4. 光敏传感器模块
+1. stm32f103 c8t6
+2. GPS模块
+3. rfid
+4. DS18B20
 5. ESP8266-01S无线模块
 
 #### 4. 云平台环境配置：
@@ -41,37 +30,6 @@
    - PA3     TX
    - PB1    复位
    - 3V3     VCC
-   - GND   GND
-
-2.1 SHT30（4根线）
-淘宝链接“https://item.taobao.com/item.htm?spm=a230r.1.14.30.357e2787HSoq79&id=624746490138&ns=1&abbucket=15#detail”
-
-   - PB9   SDA 白
-
-   - PB8  SCL 黄
- 
-   - 5V     VCC 红
-
-   - GND   GND 黑
-2.2 MQ7（4根线）
-淘宝链接“https://detail.tmall.com/item.htm?id=17949567819&ali_refid=a3_430583_1006:1104520036:N:odzF1uI6rfPgpC/gCqRKfQ==:d4cf8d46a4c27414fb83e19cd5441114&ali_trackid=1_d4cf8d46a4c27414fb83e19cd5441114&spm=a230r.1.14.1”
-
-   - PA4   AO
-
-   - PA5   DO
-
-   - 3.3V     VCC
-
-   - GND   GND
-2.1 LIGHT（4根线）
-淘宝链接“https://detail.tmall.com/item.htm?spm=a230r.1.14.4.1c8175a4KeXVtK&id=20885572596&ns=1&abbucket=15”
-
-   - PA6   AO
-
-   - PA7   DO
-
-   - 3.3V     VCC
-
    - GND   GND
 
 3. LED（最小系统自带）
@@ -112,7 +70,7 @@ PB11 <---->  TXD
    - stm32f10x_it.c：中断处理函数
    - usart1.c：与上位机通信
    - usart2.c：与ESP8266通信，串口2接收中断处理上位机发送来的数据
-   - timer2.c：定时器2中断用来发送温湿度数据，10S
+   - timer2.c：定时器2中断用来发送GPS数据，体温，30S
    - timer3.c：定时器3中断用来发送心跳包（ping，用于保持和服务器连接，长时间没给服务器发送数据会被踢下线），2s和30s两种模式
    - timer4.c：将串口2接收到的服务器数据依次存放在MQTT接收缓存数组中，50ms
    - control.c：控制LED灯，并且发送LED灯开关信号
